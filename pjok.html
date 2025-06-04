@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website HIV/AIDS - Kelompok 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+    /* style.css atau di dalam <style> */
+
+/* ... CSS Anda yang sudah ada ... */
+
+/* --- Dampak & Pencegahan Section --- KEMBALI KE LAYOUT DENGAN KOLOM DI BAWAH DAMPAK --- */
+#dampak-pencegahan-section {
+    background-color: #FFF8F8;
+}
+
+#dampak-pencegahan-section h2 { /* Judul utama section */
+    color: #20B2AA;
+    text-shadow: 0 0 8px rgba(32, 178, 170, 0.6);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dampak-full-content { /* Untuk teks Dampak HIV/AIDS di atas kolom */
+    max-width: 900px;
+    margin: 0 auto 40px auto; /* Pusatkan dan beri jarak bawah ke kolom */
+    text-align: left;
+}
+
+.dampak-full-content h3 {
+    color: #900C3F;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center; /* Subjudul Dampak rata tengah */
+}
+
+.dampak-full-content p {
+    text-align: justify;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* KEMBALIKAN STYLING UNTUK KOLOM PENCEGAHAN & PENANGGULANGAN */
+.pencegahan-penanggulangan-columns {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pencegahan-penanggulangan-columns .column {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px; /* Lebar kolom, bisa disesuaikan */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    text-align: left;
+}
+
+.pencegahan-penanggulangan-columns .column h3 {
+    margin-top: 0;
+    color: #900C3F;
+    font-size: 1.5rem; /* Ukuran subjudul di dalam kolom */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.pencegahan-penanggulangan-columns .column p {
+    text-align: justify;
+    margin-bottom: 10px;
+    line-height: 1.7; /* Sedikit beda dari .dampak-full-content p */
+}
+
+.pencegahan-penanggulangan-columns .column ol {
+    list-style-position: outside;
+    padding-left: 20px; /* Kurangi sedikit padding kiri agar tidak terlalu indent */
+    margin-top: 10px;
+    margin-bottom: 15px; /* Jarak bawah untuk list */
+}
+
+.pencegahan-penanggulangan-columns .column ol li {
+    text-align: justify;
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+/* HAPUS atau SESUAIKAN CSS untuk .content-block jika ada dari percobaan sebelumnya */
+/*
+.content-block { ... }
+.content-block h3 { ... }
+.content-block p { ... }
+.content-block ol { ... }
+*/
+
+
+/* Penyesuaian responsif untuk bagian ini */
+@media (max-width: 992px) { /* Tablet landscape */
+    .pencegahan-penanggulangan-columns .column {
+        max-width: 48%;
+    }
+}
+
+@media (max-width: 768px) { /* Tablet portrait dan mobile besar */
+    .dampak-full-content {
+        padding: 0 10px;
+    }
+    .pencegahan-penanggulangan-columns {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .pencegahan-penanggulangan-columns .column {
+        width: 90%;
+        max-width: 600px; /* Batasi max-width di mobile */
+    }
+}
+@media (max-width: 480px) { /* Mobile kecil */
+    .pencegahan-penanggulangan-columns .column {
+        width: 95%;
+    }
+     .pencegahan-penanggulangan-columns .column h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ... CSS Anda yang lain ... */
+        /* --- Reset & Base Styles --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #333333;
+            background-color: #FFF8F8;
+        }
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        .page-section {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 25px; /* Padding atas untuk header fixed */
+            position: relative;
+        }
+
+        .container { max-width: 1150px; width: 100%; text-align: center; }
+        h1, h2, h3 { color: #900C3F; margin-bottom: 20px; font-weight: 600; }
+        h1 { font-size: 3rem; line-height: 1.2; text-shadow: 1px 1px 3px rgba(0,0,0,0.1);}
+        h2 { font-size: 2.3rem; margin-bottom: 30px; }
+        h3 { font-size: 1.5rem; color: #C70039; font-weight: 500; }
+        p { margin-bottom: 15px; color: #444; font-weight: 400; max-width: 850px; margin-left:auto; margin-right:auto; }
+        ol, ul { list-style-position: inside; padding-left: 0; }
+
+        /* --- Main Header --- */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%; padding: 15px 30px;
+            display: flex; justify-content: space-between; align-items: center;
+            background-color: rgba(25, 25, 25, 0.8); backdrop-filter: blur(5px);
+            z-index: 1000; color: white;
+        }
+        .menu-toggle-button {
+            background: none; border: none; color: white; font-size: 1.8rem;
+            cursor: pointer; padding: 5px; z-index: 1002;
+        }
+        .header-title { font-size: 1.5rem; font-weight: 600; }
+
+        /* --- Navigation Overlay Panel --- */
+        .nav-overlay {
+            position: fixed; top: 0; left: -100%; width: 100%; max-width: 350px;
+            height: 100vh; background-color: #221a1a; color: white;
+            z-index: 1001; transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            padding: 80px 30px 30px 30px; display: flex; flex-direction: column;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+        }
+        .nav-overlay.active { left: 0; }
+        .nav-overlay ul { list-style: none; padding: 0; margin: 0; }
+        .nav-overlay li a {
+            display: block; color: #e0e0e0; text-decoration: none;
+            font-size: 1.3rem; font-weight: 500; padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+        .nav-overlay li:last-child a { border-bottom: none; }
+        .nav-overlay li a:hover, .nav-overlay li a.active-link {
+            color: #FF5733; padding-left: 10px;
+        }
+        .close-menu-button {
+            position: absolute; top: 25px; right: 25px; background: none;
+            border: none; color: white; font-size: 2rem; cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        #hero-section { background: linear-gradient(135deg, #C70039 0%, #FF5733 100%); color: #fff; }
+        #hero-section h1 { color: #fff; cursor: pointer; }
+        #hero-section .subtitle { font-size: 2.8rem; font-weight: 700; color: #ffffff; margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.25); }
+        #hero-section .team-members { font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); font-weight: 300; margin-top: 15px; line-height: 1.6; }
+
+        /* --- Definisi Section --- */
+        #definisi-section { background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 248, 248, 0) 70%), #FFF8F8; }
+        .definisi-layout-container {
+            display: flex; align-items: flex-start; gap: 40px;
+            width: 100%; max-width: 1200px; padding: 0 20px;
+        }
+        .definisi-text-content { flex: 1 1 55%; max-width: 700px; text-align: left; }
+        .definisi-text-content h2 {
+            color: #00BFFF; text-shadow: 0 0 8px rgba(0, 191, 255, 0.6), 0 0 15px rgba(0, 191, 255, 0.4);
+            text-align: left; margin-bottom: 20px;
+        }
+        .definisi-text-content p {
+            text-align: justify; color: #333; line-height: 1.8;
+            margin-left: 0; margin-right: 0; max-width: none;
+        }
+        .definisi-text-content p strong { color: #900C3F; }
+        .definisi-poster-image { flex: 1 1 40%; max-width: 500px; text-align: center; }
+        .definisi-poster-image img {
+            max-width: 100%; height: auto; border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* --- Gejala HIV/AIDS Section --- */
+        /* style.css atau di dalam <style> */
+
+/* ... CSS Anda yang sudah ada ... */
+
+/* --- Gejala HIV/AIDS Section --- PENYESUAIAN UNTUK TAHAPAN DI TENGAH --- */
+#gejala-hiv-section {
+    background-color: #ffffff;
+}
+
+#gejala-hiv-section h2 { /* Judul utama section "Gejala HIV/AIDS" */
+    color: #900C3F;
+    text-align: center; /* Sudah center dari .container, tapi bisa eksplisit */
+    margin-bottom: 25px;
+}
+
+.gejala-intro-text {
+    max-width: 900px; /* Lebar teks pengantar */
+    margin: 0 auto 30px auto; /* Pusatkan dan beri jarak bawah */
+    text-align: justify;
+    line-height: 1.8;
+}
+.gejala-intro-text p { margin-bottom: 15px; }
+.gejala-intro-text p strong {
+    display: block; text-align: center; font-size: 1.1em;
+    margin-top: 20px; color: #C70039;
+}
+
+.gejala-image-container { /* Untuk gambar infografis penularan */
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.gejala-image-container img {
+    max-width: 100%; height: auto; display: block;
+    margin-left: auto; margin-right: auto; border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk Horizontal Scrollable Panels tetap berlaku */
+.gejala-tahapan-scroll-container {
+    display: flex; overflow-x: auto; overflow-y: hidden; width: 100%;
+    padding: 20px 5px; /* Padding untuk scrollbar */
+    margin-top: 20px; /* Jarak dari elemen di atasnya (gambar) */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin; scrollbar-color: #C70039 #f0f0f0;
+}
+/* ... (Styling scrollbar tetap sama) ... */
+
+.gejala-tahap-panel {
+    flex: 0 0 90vw;       /* Panel bisa lebih lebar karena sekarang mengambil lebar penuh .container */
+    max-width: 650px;     /* Batasan lebar maksimum per panel */
+    /* Anda bisa menyesuaikan flex-basis dan max-width ini lagi jika perlu */
+    min-height: 380px;
+    margin-right: 30px;
+    background-color: #fff; border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px; display: flex; align-items: flex-start;
+    overflow: hidden; transition: transform 0.3s ease;
+}
+.gejala-tahap-panel:last-child { margin-right: 0; }
+
+.tahap-letter {
+    font-size: 15vh; font-weight: 700; color: rgba(144, 12, 63, 0.12);
+    line-height: 1; margin-right: 30px; flex-shrink: 0;
+    user-select: none; padding-top: 15px;
+}
+.tahap-content { flex-grow: 1; text-align: left; }
+.tahap-content h3 {
+    color: #C70039; font-size: 2rem; margin-top: 0; margin-bottom: 20px;
+}
+.tahap-content ol { list-style-position: outside; padding-left: 20px; line-height: 1.7; }
+.tahap-content ol li {
+    margin-bottom: 10px; text-align: justify; color: #444; font-size: 0.95rem;
+}
+
+/* HAPUS atau SESUAIKAN CSS untuk .gejala-layout-container, .gejala-poster-column, .gejala-text-column */
+/* Karena sudah tidak digunakan dalam struktur HTML baru untuk section ini */
+/*
+.gejala-layout-container { ... }
+.gejala-poster-column { ... }
+.gejala-poster-column img { ... }
+.gejala-text-column { ... }
+#gejala-hiv-section .gejala-text-column h2 { ... }
+*/
+
+/* Penyesuaian responsif untuk bagian gejala */
+@media (max-width: 992px) {
+    .gejala-tahap-panel {
+        flex: 0 0 90vw; /* Tetap lebar di tablet */
+        max-width: 600px;
+    }
+    .tahap-letter { font-size: 13vh; }
+    .tahap-content h3 { font-size: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+    /* Penyesuaian .gejala-tahap-panel, .tahap-letter, .tahap-content, dll.
+       yang sudah ada untuk mobile tetap relevan dan bisa dipertahankan atau disesuaikan sedikit.
+       Misalnya, panel mungkin tidak perlu max-width: none; lagi jika sudah di dalam .container
+       yang memiliki max-width. */
+
+    .gejala-tahapan-scroll-container { padding: 20px 0; }
+    .gejala-tahap-panel {
+        flex: 0 0 90vw; /* Sesuaikan dengan kebutuhan di mobile */
+        /* max-width: none; /* Mungkin tidak perlu jika .container sudah membatasi */
+        min-height: auto;
+        flex-direction: column; align-items: center; text-align: center; padding: 25px;
+    }
+    .tahap-letter {
+        font-size: 12vh; margin-right: 0; margin-bottom: 20px; padding-top: 0;
+    }
+    /* ... (CSS mobile lainnya yang sudah ada) ... */
+}
+/* ... (CSS @media (max-width: 480px) yang sudah ada) ... */
+
+/* ... CSS Anda yang lain ... */
+
+        .gejala-layout-container {
+            display: flex; align-items: flex-start; gap: 40px;
+            width: 100%; /* max-width: 1300px; /* Disesuaikan oleh .container */
+        }
+        .gejala-poster-column {
+            flex: 1 1 40%; max-width: 500px; position: sticky; top: 100px;
+            align-self: flex-start; height: calc(100vh - 120px); overflow-y: auto;
+        }
+        .gejala-poster-column img {
+            width: 100%; max-width: 100%; height: auto;
+            object-fit: contain; max-height: 100%; border-radius: 8px;
+        }
+        .gejala-text-column { flex: 1 1 55%; max-width: 750px; }
+        #gejala-hiv-section .gejala-text-column h2 {
+            color: #900C3F; text-align: center; margin-bottom: 20px;
+        }
+        .gejala-intro-text {
+            max-width: none; margin: 0 auto 25px auto;
+            text-align: justify; line-height: 1.7;
+        }
+        .gejala-intro-text p { margin-bottom: 15px; }
+        .gejala-intro-text p strong {
+            display: block; text-align: center; font-size: 1.1em;
+            margin-top: 15px; margin-bottom: 10px; color: #C70039;
+        }
+        .gejala-tahapan-scroll-container {
+            display: flex; overflow-x: auto; overflow-y: hidden; width: 100%;
+            padding: 15px 0; margin-top: 15px;
+            scrollbar-width: thin; scrollbar-color: #C70039 #f0f0f0;
+        }
+        .gejala-tahapan-scroll-container::-webkit-scrollbar { height: 8px; }
+        .gejala-tahapan-scroll-container::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 4px; }
+        .gejala-tahapan-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #C70039; border-radius: 4px; border: 2px solid #f0f0f0;
+        }
+        .gejala-tahapan-scroll-container::-webkit-scrollbar-thumb:hover { background-color: #900C3F; }
+        .gejala-tahap-panel {
+            flex: 0 0 88vw; max-width: 480px; min-height: 360px; margin-right: 20px;
+            background-color: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px; display: flex; align-items: flex-start; overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .gejala-tahap-panel:last-child { margin-right: 0; }
+        .tahap-letter {
+            font-size: 13vh; font-weight: 700; color: rgba(144, 12, 63, 0.12);
+            line-height: 1; margin-right: 30px; flex-shrink: 0;
+            user-select: none; padding-top: 15px;
+        }
+        .tahap-content { flex-grow: 1; text-align: left; }
+        .tahap-content h3 {
+            color: #C70039; font-size: 1.8rem; margin-top: 0; margin-bottom: 20px;
+        }
+        .tahap-content ol { list-style-position: outside; padding-left: 20px; line-height: 1.7; }
+        .tahap-content ol li {
+            margin-bottom: 10px; text-align: justify; color: #444; font-size: 0.9rem;
+        }
+
+
+        /* --- Pola & Stadium Section --- */
+        #pola-stadium-section { background-color: #ffffff; }
+        #pola-stadium-section .content-wrapper { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+        #pola-stadium-section .sub-section { width: 100%; max-width: 900px; }
+        #pola-stadium-section h2 { color: #900C3F; text-align: center; margin-bottom: 20px; }
+        #pola-stadium-section .sub-section p { text-align: justify; color: #444; line-height: 1.8; }
+        .enhanced-card {
+            background-color: #ffffff; border-radius: 12px; box-shadow: 0 5px 20px rgba(144, 12, 63, 0.08);
+            border: 1px solid #fdeeee; padding: 30px; text-align: left; line-height: 1.8;
+        }
+        .enhanced-card ol { list-style-position: outside; padding-left: 20px; }
+        .enhanced-card ol li { margin-bottom: 10px; text-align: justify; }
+        .enhanced-card ol li strong { color: #C70039; }
+
+        /* --- Dampak & Pencegahan Section --- */
+        #dampak-pencegahan-section { background-color: #FFF8F8; }
+        #dampak-pencegahan-section h2 {
+            color: #20B2AA; text-shadow: 0 0 8px rgba(32, 178, 170, 0.6);
+            margin-bottom: 30px; text-align: center;
+        }
+        .dampak-content {
+            text-align: justify; margin-bottom: 40px; max-width: 900px;
+            margin-left: auto; margin-right: auto;
+        }
+        .dampak-content h3 { text-align: center; color: #900C3F; margin-bottom: 15px; }
+        .pencegahan-penanggulangan-columns {
+            display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;
+        }
+        .pencegahan-penanggulangan-columns .column {
+            flex: 1; min-width: 320px; max-width: 600px; background-color: #fff;
+            padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            text-align: left;
+        }
+        .pencegahan-penanggulangan-columns .column h3 {
+            margin-top: 0; color: #900C3F; margin-bottom: 15px; text-align: center;
+        }
+        .pencegahan-penanggulangan-columns .column p { text-align: justify; margin-bottom: 10px; }
+        .pencegahan-penanggulangan-columns .column ol {
+            list-style-position: outside; padding-left: 20px; text-align: justify;
+        }
+        .pencegahan-penanggulangan-columns .column ol li { margin-bottom: 8px; }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 992px) {
+            .definisi-layout-container, .gejala-layout-container {
+                flex-direction: column; align-items: center; gap: 30px;
+            }
+            .definisi-text-content, .definisi-poster-image,
+            .gejala-poster-column, .gejala-text-column {
+                flex-basis: auto; width: 100%; max-width: 750px;
+            }
+            .definisi-text-content h2, .gejala-text-column h2 { text-align: center; }
+            .definisi-text-content p { text-align: justify; }
+
+            .gejala-poster-column {
+                order: 1; max-width: 600px; position: static;
+                height: auto; margin-bottom: 30px;
+            }
+            .gejala-text-column { order: 2; max-height: none; }
+            .gejala-tahap-panel { flex: 0 0 90vw; max-width: none; } /* Disesuaikan lagi agar pas */
+            .tahap-letter { font-size: 12vh; } /* Disesuaikan lagi */
+            .tahap-content h3 { font-size: 1.7rem; } /* Disesuaikan lagi */
+
+            .pencegahan-penanggulangan-columns .column { max-width: 48%; }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            #hero-section .subtitle { font-size: 1.8rem; }
+            h2 { font-size: 1.9rem; }
+            .page-section { padding: 70px 15px 30px 15px; }
+            .main-header { padding: 10px 15px; }
+            .header-title { font-size: 1.2rem; }
+            .menu-toggle-button { font-size: 1.5rem; }
+            .nav-overlay { max-width: 280px; padding-top: 70px; }
+            .nav-overlay li a { font-size: 1.1rem; padding: 12px 0; }
+            .close-menu-button { top: 18px; right: 15px; font-size: 1.8rem;}
+
+            .definisi-text-content, .definisi-poster-image,
+            .gejala-poster-column, .gejala-text-column { max-width: 100%; }
+
+            .gejala-tahapan-scroll-container { padding: 20px 0; }
+            .gejala-tahap-panel {
+                flex: 0 0 90vw; /* Biarkan lebih lebar sedikit di mobile */
+                flex-direction: column; align-items: center; text-align: center; padding: 25px;
+            }
+            .tahap-letter {
+                font-size: 10vh; margin-right: 0; margin-bottom: 20px; padding-top: 0;
+            }
+            .tahap-content { text-align: center; }
+            .tahap-content h3 { font-size: 1.5rem; }
+            .tahap-content ol { padding-left: 0; list-style-position: inside; }
+            .tahap-content ol li { text-align: left; font-size: 0.9rem; }
+            .gejala-intro-text p strong { font-size: 1em; }
+
+            .dampak-content { padding: 0 10px; }
+            .pencegahan-penanggulangan-columns { flex-direction: column; align-items: center; gap: 20px; }
+            .pencegahan-penanggulangan-columns .column { width: 90%; max-width: 600px; }
+            #pola-stadium-section .sub-section p, .enhanced-card ol li { /* text-align: left; */ }
+        }
+        @media (max-width: 480px) {
+            .page-section { padding-top: 60px; }
+            .gejala-tahap-panel { padding: 20px 15px; flex: 0 0 92vw; } /* Sedikit lebih sempit */
+            .tahap-letter { font-size: 8vh; }
+            .tahap-content h3 { font-size: 1.3rem; }
+            .pencegahan-penanggulangan-columns .column { width: 95%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <button class="menu-toggle-button" id="menuToggleButton" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="header-title">KELOMPOK 3</div>
+        <div></div>
+    </header>
+
+    <div class="nav-overlay" id="navOverlay">
+        <button class="close-menu-button" id="closeMenuButton" aria-label="Close Menu">×</button>
+        <ul>
+            <li><a href="#hero-section" class="overlay-nav-link">Beranda</a></li>
+            <li><a href="#definisi-section" class="overlay-nav-link">Pengertian HIV</a></li>
+            <li><a href="#gejala-hiv-section" class="overlay-nav-link">Gejala HIV/AIDS</a></li>
+            <li><a href="#pola-stadium-section" class="overlay-nav-link">Pola & Stadium</a></li>
+            <li><a href="#dampak-pencegahan-section" class="overlay-nav-link">Dampak & Pencegahan</a></li>
+        </ul>
+    </div>
+
+    <section id="hero-section" class="page-section">
+        <div class="container">
+            <h1 id="main-title">KELOMPOK 3</h1>
+            <div class="subtitle">WEBSITE HIV/AIDS</div>
+            <div class="team-members">By Amos, Atanasia, Caroline, Justin.<br>James, Ophelia, & Suho</div>
+        </div>
+    </section>
+
+    <section id="definisi-section" class="page-section">
+        <div class="container definisi-layout-container">
+            <div class="definisi-text-content">
+                <h2>Apa itu Penyakit HIV?</h2>
+                <p><strong>Pengertian:</strong><br>HIV ( Human Immunodeficiency Virus ) merupakan virus yang dapat menyerang sistem kekebalan tubuh, sehingga dalam jangka waktu tertentu dapat melemahkan kemampuan tubuh melawan infeksi dan penyakit. Bagian tubuh yang diserang oleh virus ini adalah sel CD 4 atau sel T (T cell) sehingga menyebabkan turunnya sistem kekebalan, kekuatan dan daya tahan tubuh yang selanjutnya menyababkan tubuh penerima virus rentan terhadap penyakit lain dan semakin melemah. Virus ini pertama kali ditemukan di Kinshasa, Kongo, pada tahun 1920, yang ditularkan dari simpanse dan gorila, tetapi tidak menjadi ancaman serius. Pada tahun 1981 keresahan kembali terjadi karna ditemukan infeksi paru - paru Pneumocystis Carinii Pneumonia (PCP) yang jarang terjadi. Pada akhir tahun 1981, dilaporkan terdapat 270 kasus pasien dengan kerusakan kekebalan tubuh yang parah pada pria homo seksual dan 121 orang di antaranya meninggal dunia. Masuknya HIV di Indonesia berawal pada tahun 1987 yang muncuk dari seorang turis asing Belanda yang meninggal di Bali dengan tanda infeksi AIDS, akhirnya berita penyebaran virus HIV/AIDS dilaporkan pada WHO dan Indonesia menjadi negara ke-13 yang melaporkan kasus HIV/AIDS di dunia.</p>
+            </div>
+            <div class="definisi-poster-image">
+                <img src="Apa itu HIVAids.png" alt="Poster Waspada HIV/AIDS">
+            </div>
+        </div>
+    </section>
+
+        <!-- Gejala HIV/AIDS Section - STRUKTUR DIPERBAIKI UNTUK TAHAPAN DI TENGAH -->
+    <section id="gejala-hiv-section" class="page-section">
+        <div class="container"> <!-- Container utama untuk section ini -->
+            <h2>Gejala HIV/AIDS</h2>
+            <div class="gejala-intro-text">
+                <p>Gejala klinis pada orang yang terjangkiti penyakit ini tidak muncul tiba-tiba. Memerlukan waktu panjang untuk mengetahui bahwa seseorang menderita HIV/AIDS. Kurun waktu 5 hingga 10 tahun dari mulai terjangkit hingga seseorang akan terlihat bahwa ia menderita penyakit ini. Pada tahap awal penderita yang baru saja terinfeksi virus HIV terbentuk antibodi positif, sehingga tidak terlihat gejala maupun tanda-tanda penyakitnya. Akan tetapi bila kejadian ini sudah berlangsung lama gejala-gejala klinisnya muncul.</p>
+                <p>Gejala klinis itu antara lain rasa lelah yang berkepanjangan, sering demam (lebih dari 38°C) yang disertai keringat malam tanpa sebab yang jelas, sesak napas dan batuk berkepanjangan, berat badan menurun secara mencolok, pembesaran kelenjar (di leher, ketiak dan lipatan paha) tanpa sebab yang jelas, diare yang hebat secara terus-menerus, bercak merah kebiruan pada kulit dan jika terjadi infeksi, maka infeksinya akan semakin meluas dan semakin berat.</p>
+                <p><strong>Gejala ini dibagi menjadi tiga tahap:</strong></p>
+            </div>
+
+            <div class="gejala-image-container"> <!-- Gambar Infografis Penularan -->
+                <img src="KELOMPOK 3 AMOS, ATANASIA, CAROLINE, JUSTIN, JAMES, OPHELIA, & SUHO.png" alt="Infografis Cara Penularan HIV">
+                <!-- PASTIKAN PATH GAMBAR INI BENAR -->
+            </div>
+
+            <!-- Horizontal Scrollable Panels for Gejala Stages SEKARANG DI LUAR layout-container SEBELUMNYA -->
+            <div class="gejala-tahapan-scroll-container">
+                <div class="gejala-tahap-panel">
+                    <div class="tahap-letter">1</div>
+                    <div class="tahap-content">
+                        <h3>Tahap Pertama</h3>
+                        <ol>
+                            <li>Penderita mengalami nyeri mirip seperti flu, beberapa minggu setelah terinfeksi, selama satu hingga dua bulan.</li>
+                            <li>Dapat saja tidak menimbulkan gejala apapun selama beberapa tahun.</li>
+                            <li>Timbul demam, nyeri tenggorokan, ruam, pembengkakan kelenjar getah bening, diare, kelelahan, nyeri otot, dan sendi.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="gejala-tahap-panel">
+                    <div class="tahap-letter">2</div>
+                    <div class="tahap-content">
+                        <h3>Tahap Kedua</h3>
+                        <ol>
+                            <li>Umumnya, tidak menimbulkan gejala lebih lanjut selama bertahun-tahun.</li>
+                            <li>Virus terus menyebar dan merusak sistem kekebalan tubuh.</li>
+                            <li>Penularan kepada orang lain sudah dapat terjadi.</li>
+                            <li>Berlangsung hingga 10 tahun atau lebih.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="gejala-tahap-panel">
+                    <div class="tahap-letter">3</div>
+                    <div class="tahap-content">
+                        <h3>Tahap Ketiga</h3>
+                        <ol>
+                            <li>Daya tahan penderita rentan, sehingga mudah sakit, dan akan berlanjut menjadi AIDS.</li>
+                            <li>Demam terus-menerus lebih dari sepuluh hari.</li>
+                            <li>Merasa lelah setiap saat.</li>
+                            <li>Sulit bernapas.</li>
+                            <li>Diare yang berat dan dalam jangka waktu yang lama.</li>
+                            <li>Terjadi infeksi jamur pada tenggorokan, mulut, dan alat kelamin wanita.</li>
+                            <li>Timbul bintik ungu pada kulit yang tidak akan hilang.</li>
+                            <li>Hilang nafsu makan, sehingga berat badan turun drastis.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div> <!-- End .gejala-tahapan-scroll-container -->
+        </div> <!-- End .container -->
+    </section>
+
+     <section id="pola-stadium-section" class="page-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="sub-section">
+                    <h2>Pola Penularan</h2>
+                    <p>Proses penularan virus HIV/AIDS dapat terjadi melalui hubungan seksual dengan penderita, transfusi darah yang mengandung virus HIV, jarum suntik atau alat tusuk lainnya yang telah dipakai oleh penderita atau dengan alat tertentu yang terkena darah penderita seperti pisau cukur, sikat gigi, atau bahkan tusuk gigi. Cara penularan virus ini tidak seperti virus influenza yang dapat menular melalui air liur dan cairan tubuh lain yang berpindah dengan media udara.</p>
+                </div>
+                 <div class="gejala-image-container"> <!-- GAMBAR INFOGRAFIS PENULARAN SEHARUSNYA DI SINI -->
+                    <img src="Gejala_Hiv.jpg" alt="Infografis Cara Penularan HIV">
+                </div>
+                <div class="sub-section">
+                    <h2>Stadium - stadium HIV/AIDS</h2>
+                    <div class="enhanced-card">
+                        <ol>
+                            <li><strong>Stadium 1:</strong> Penderita belum menunjukkan gejala dan juga tidak menunjukkan gejala klinis berarti, sehingga pasien tampak sehat seperti orang normal dan mampu melakukan aktivitas seperti biasanya.</li>
+                            <li><strong>Stadium 2:</strong> Penderita sudah mulai menunjukkan gejala ringan, seperti penurunan berat badan sampai dengan 10%, infeksi yang berulang pada saluran napas dan kulit.</li>
+                            <li><strong>Stadium 3:</strong> Penderita sudah mulai terlihat lemah, gejala dan infeksi sudah mulai bermunculan, selain itu juga mengalami penurunan berat badan yang lebih banyak, diare yang tidak kunjung sembuh, demam yang hilang timbul, serta mengalami infeksi jamur pada rongga mulut bahkan infeksi sudah menjalar ke paru - paru.</li>
+                            <li><strong>Stadium 4:</strong> Penderita mengalami AIDS, aktivitas pasien akan banyak dilakukan di tempat tidur karena kondisi dan keadaannya sudah mulai lemah, infeksi mulai bermunculan di mana - mana, dan semuanya cenderung berat.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="dampak-pencegahan-section" class="page-section">
+        <div class="container"> <!-- Container utama untuk section ini -->
+            <h2>Dampak Serta Pencegahan dan Penanggulangan HIV/AIDS</h2>
+
+            <div class="dampak-full-content"> <!-- Div untuk teks Dampak -->
+                <h3>Dampak HIV/AIDS</h3>
+                <p>Penderita AIDS pada awalnya mengalami gejala-gejala umum seperti influenza. Lambat laun berkembang gejala non spesifik lanjutan dari penyakit AIDS yang disebut ARC (AIDS Related Complex). Gejala ini berlangsung selama lebih dari 3 bulan. Ciri-ciri dari ARC adalah sering muncul demam tinggi (lebih dari 38 derajat celcius), turunnya berat badan lebih dari 10%, sering berkeringat di malam hari tanpa sebab, diare kronis lebih dari 1 bulan, muncul bercak putih pada lidah. Komplikasi penyakit karena kekebalan tubuh yang melemah merupakan masalah yang sangat serius yang diderita oleh pengidap HIV/AIDS. Komplikasi penyakit yang kerap ditemukan pada penderita HIV/AIDS adalah tuberkulosis (TBC), toksoplasmosis, kriptosporidiosis, sitomegalovirus, tandidiasis, kriptokokus meningitis, kanker kelenjar getah bening, pneumonia kronis, sindrom wasting pada AIDS, serta herpes simpleks dan herpes ozster.</p>
+                <p>Selain masalah fisik tersebut juga masalah mental, karena penderita HIV/AIDS biasanya diberi stigma oleh masyarakat sebagai orang yang tidak bermoral. Krisis mental terjadi pada diri, keluarga, dan orang yang dicintainya maupun masyarakat sekitar. Hal ini dapat berakibat buruk, yaitu risiko bunuh diri para penderita. Bahkan lebih hebat lagi keputusan untuk bunuh diri ini disampaikan kepada para dokter agar pasien tidak merasakan penderitaan secara fisik dan mental yang berkepanjangan.</p>
+                <p>Secara sosial, keberadaan dan semakin banyaknya penderita HIV/ AIDS di lingkungan masyarakat tertentu menimbulkan kepanikan massal (mass hysteria). Begitu mengerikannya di masayarakat penyakit ini dianggap sebagai penyakit yang sudah tidak ada harapan untuk disembuhkan dan berakhir pada kematian. Dari anggapan tersebut, penyakit ini sering disebut sebagai penyakit terminal.</p>
+            </div>
+
+            <div class="pencegahan-penanggulangan-columns"> <!-- KEMBALIKAN STRUKTUR KOLOM INI -->
+                <div class="column"> <!-- Kolom Kiri untuk Pencegahan -->
+                    <h3>Pencegahan Penyakit HIV/AIDS</h3>
+                    <p>Sebagai upaya pencegahan dan pemberantasan HIV/AIDS ini perlu dilakukan secara bergotong-royong oleh pihak-pihak pendidikan, sosial, agama, kepolisian, dan sebagainya. Secara garis besar upaya pencegahan dan pemberantasan dapat dilakukan dengan cara sebagai berikut.</p>
+                    <ol type="a">
+                        <li>Upaya penyembuhan dengan pengobatan bagi penderita, sebagai sumber penularan melalui casefinding (mencari penderita dalam masyarakat dengan jalan pemeriksaan), dan contact tracing (menanyakan kepada penderita kepada siapa saja ia telah menularkan, agar dapat diusut sehingga pengobatan dapat segera diberikan).</li>
+                        <li>Meniadakan dan memberantas sumber penularan, seperti wanita tuna susila (WTS) dan pelaku homoseksual bebas.</li>
+                        <li>Pendidikan dan penerangan kepada masyarakat. Masyarakat perlu mengetahui dan menyadari bahaya penyakit kelamin untuk dirinya, keluarga, dan keturunannya, agar mereka terhindar dari penyakit HIV/AIDS.</li>
+                    </ol>
+                </div>
+                <div class="column"> <!-- Kolom Kanan untuk Penanggulangan -->
+                    <h3>Penanggulangan Penyakit HIV/AIDS</h3>
+                    <p>Secara tindakan nyata usaha penanggulangan terhadap penyakit AIDS, diantaranya dilakukan dengan cara sebagai berikut.</p>
+                    <ol type="a">
+                        <li>Menghindarkan diri dari hubungan seksual dengan siapapun kecuali dengan suami/istri yang sah saja. Hal ini perlu diketahui karena banyak sekali peluang tertular jika terjadi hubungan seksual dengan kelompok risiko tinggi tertular AIDS (homoseksual, kelompok pria/ wanita yang aktif melakukan hubungan seksual dengan banyak mitra seksual (lelaki yang melakukan hubungan seksual dengan lelaki maupun wanita atau sebaliknya)), mucikari, dan penyalahgunaan narkotika terutama yang menggunakan jarum suntik.</li>
+                        <li>Jika telah resmi menikah harus menghindari hubungan seksual bila pasangan mengalami luka pada alat berhubungan seksual, serta penggunaan alat lain yang memungkinkan timbulnya luka. Selain itu disarankan menggunakan kondom secara tepat.</li>
+                        <li>Tidak menggunakan alat seperti pisau cukur, sikat gigi dan pemotong kuku milik orang lain. Karena mungkin alat-alat tersebut mengandung butir-butir darah pengidap AIDS.</li>
+                        <li>Melakukan vaksinasi.</li>
+                        <li>Jika bekerja dengan ODHA sebaiknya menggunakan alat pelindung diri (APD).</li>
+                    </ol>
+                </div>
+            </div> <!-- End .pencegahan-penanggulangan-columns -->
+        </div> <!-- End .container -->
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainTitle = document.getElementById('main-title');
+        const heroSection = document.getElementById('hero-section');
+        const menuToggleButton = document.getElementById('menuToggleButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const navOverlay = document.getElementById('navOverlay');
+        const overlayNavLinks = document.querySelectorAll('.overlay-nav-link');
+        const sections = document.querySelectorAll('.page-section');
+        const body = document.body;
+
+        if (mainTitle && heroSection) {
+            mainTitle.addEventListener('click', function() { scrollToSection(heroSection); });
+        }
+        if (menuToggleButton && navOverlay) {
+            menuToggleButton.addEventListener('click', function() {
+                navOverlay.classList.add('active'); body.classList.add('no-scroll');
+                menuToggleButton.innerHTML = '<i class="fas fa-times"></i>';
+            });
+        }
+        if (closeMenuButton && navOverlay) {
+            closeMenuButton.addEventListener('click', function() { closeOverlay(); });
+        }
+        overlayNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    scrollToSection(targetSection);
+                    closeOverlay();
+                } else {
+                    console.error("Target section not found for ID:", targetId); // Debug
+                }
+            });
+        });
+        function closeOverlay() {
+            if (navOverlay) {
+                navOverlay.classList.remove('active'); body.classList.remove('no-scroll');
+                if (menuToggleButton) { menuToggleButton.innerHTML = '<i class="fas fa-bars"></i>'; }
+            }
+        }
+        function scrollToSection(sectionElement) {
+            const headerOffset = document.querySelector('.main-header')?.offsetHeight || 0;
+            if (!sectionElement || typeof sectionElement.getBoundingClientRect !== 'function') {
+                console.error("Invalid sectionElement passed to scrollToSection:", sectionElement);
+                return;
+            }
+            const elementPosition = sectionElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+
+        const headerHeight = document.querySelector('.main-header')?.offsetHeight || 60;
+        const observerOptions = {
+            root: null,
+            rootMargin: `-${headerHeight + 10}px 0px 0px 0px`,
+            threshold: 0.4
+        };
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                const targetId = '#' + entry.target.id;
+                const correspondingLink = document.querySelector(`.overlay-nav-link[href="${targetId}"]`);
+                if (entry.isIntersecting && correspondingLink) {
+                    overlayNavLinks.forEach(link => link.classList.remove('active-link'));
+                    correspondingLink.classList.add('active-link');
+                } else if (correspondingLink) {
+                    correspondingLink.classList.remove('active-link');
+                }
+            });
+        };
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        sections.forEach(section => { if (section) observer.observe(section); });
+    });
+    </script>
+</body>
+</html>
